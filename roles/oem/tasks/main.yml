@@ -63,8 +63,3 @@
       mode: 0755
       owner: root
       group: staff
-- name: Validate missing USB 2/3 controllers
-  shell: lspci | grep -i -e EHCI -e xHCI
-  register: lspci_output
-  failed_when: lspci_output.rc == 0
-  changed_when: False
